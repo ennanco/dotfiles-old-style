@@ -1,4 +1,4 @@
-let mapleader = "-"               "Define the leader character for additional functions
+let mapleader = "_"               "Define the leader character for additional functions
 filetype off
 
 

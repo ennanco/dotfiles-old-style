@@ -19,7 +19,7 @@ fi
 # set PATH so it includes user's private bin if it exists
 PATH="$HOME/.scripts:$PATH"
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$HOME/.scripts:$PATH"
+    export PATH="$HOME/bin:$PATH"
 fi
 
 # LESS & MAN colors
@@ -49,3 +49,8 @@ export LD_LIBRARY_PATH=$CUDA_HOME/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 ##OPENBLAS
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+
+#RUST HOME and CARGO home
+export CARGO_HOME=$HOME/.cargo
+export RUSTUP_HOME=$HOME/.rustup
+export PATH="$CARGI_HOME/bin:$PATH"
