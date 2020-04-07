@@ -53,4 +53,4 @@ export LD_LIBRARY_PATH=$CUDA_HOME/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 #RUST HOME and CARGO home
 export CARGO_HOME=$HOME/.cargo
 export RUSTUP_HOME=$HOME/.rustup
-export PATH="$CARGI_HOME/bin:$PATH"
+export PATH="$CARGO_HOME/bin:$PATH"
