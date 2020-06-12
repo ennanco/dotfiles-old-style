@@ -33,12 +33,24 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;31m'
 #less more friendly for non text inputs
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+export LESSHISTFILE="-"
 
 #GENERAL VARIABLES
 export BROWSER='firefox'
 export READER='zathura'
 export EDITOR='vim'
 export TERMINAL='mate-terminal'
+
+# load aliases for the terminal defining some
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+#if exists load the variables XDG base directory
+[ -f "$HOME/.config/xdgrc" ] && source "$HOME/.config/xdgrc";
+
+
+#RUST HOME and CARGO home
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 
 #CUDA - DEEP LEARNING
@@ -50,7 +62,3 @@ export LD_LIBRARY_PATH=$CUDA_HOME/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
-#RUST HOME and CARGO home
-export CARGO_HOME=$HOME/.cargo
-export RUSTUP_HOME=$HOME/.rustup
-export PATH="$CARGO_HOME/bin:$PATH"
