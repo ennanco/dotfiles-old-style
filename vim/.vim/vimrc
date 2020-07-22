@@ -2,32 +2,21 @@ let mapleader = "_"               "Define the leader character for additional fu
 filetype off
 
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let vundle manage itself
-Plugin 'gmarik/Vundle.vim'
-" Plugins
-Plugin 'davidhalter/jedi-vim'             " Python auto-complete
-Plugin 'vim-scripts/indentpython.vim'     " Python auto-indentation
-Plugin 'altercation/vim-colors-solarized' " Solarized theme
-Plugin 'scrooloose/nerdtree'              " NERDTree to explore directory
-Plugin 'tpope/vim-fugitive'               " Git integration plugin
-Plugin 'tmhedberg/SimpylFold'             " Easy folding to hide funtions
-Plugin 'tpope/vim-surround'               " Complete the bracket
-Plugin 'tpope/vim-repeat.git'             " maps . to repeat last command
-Plugin 'bronson/vim-trailing-whitespace'  " Mark as incorrect any space
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder for files command :Files
-Plugin 'junegunn/fzf.vim'                 " Counter part for fzf
-"Plugin 'jreybert/vimagit'                "a way to control the git
-"Plugin 'bling/vim-airline'               "a easy line and very light forked from powerline with possibilities to personalize
-Plugin 'tpope/vim-commentary'             "comment multiple lines, paragraphs or sections by using 'gc'
-"Plugin 'vifm/vifm.vim'                   "A file manager integrated in vim
-
-"Plugin 'terryma/vim-multiple-cursors'     " Multiple cursor with crtl-n and crtl-p
-
-call vundle#end()
-filetype plugin indent on       "required!
+call plug#begin('.vim/plugged')
+Plug 'davidhalter/jedi-vim'                                     " Python auto-complete
+Plug 'vim-scripts/indentpython.vim'                             " Python auto-indentation
+Plug 'altercation/vim-colors-solarized'                         " Solarized theme
+Plug 'arcticicestudio/nord-vim'                                 "Make nord theme available
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}              " NERDTree to explore directory
+Plug 'tpope/vim-fugitive'                                       " Git integration plugin
+Plug 'tpope/vim-surround'                                       " Complete the bracket
+Plug 'tpope/vim-repeat'                                         " maps . to repeat last command
+Plug 'tpope/vim-commentary'                                     "comment multiple lines, paragraphs or sections by using 'gc'
+Plug 'tmhedberg/SimpylFold'                                     " Easy folding to hide funtions
+Plug 'bronson/vim-trailing-whitespace'                          " Mark as incorrect any space
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder for files command :Files
+Plug 'junegunn/fzf.vim'                                         "Counter part for fzf
+call plug#end()
 
 set nocompatible                "set compatibility with old vi to none, required fro many other options
 
@@ -93,12 +82,14 @@ nnoremap c "_c
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Setup theme
-colorscheme solarized
-let g:solarized_termcolors=256
+"colorscheme solarized
 "colorscheme industry
 if has('gui_running')
-    set background=light
+    colorscheme solarized
+    let g:solarized_termcolors=256
+    set background=dark
 else
+    colorscheme nord
     set background=dark
 endif
 call togglebg#map("<F5>")
