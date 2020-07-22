@@ -33,7 +33,7 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;31m'
 #less more friendly for non text inputs
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-export LESSHISTFILE="-"
+export LESSHISTFILE=-
 
 #GENERAL VARIABLES
 export BROWSER='firefox'
