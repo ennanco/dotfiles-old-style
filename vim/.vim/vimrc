@@ -16,6 +16,8 @@ Plug 'tmhedberg/SimpylFold'                                     " Easy folding t
 Plug 'bronson/vim-trailing-whitespace'                          " Mark as incorrect any space
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder for files command :Files
 Plug 'junegunn/fzf.vim'                                         "Counter part for fzf
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 set nocompatible                "set compatibility with old vi to none, required fro many other options
@@ -82,14 +84,14 @@ nnoremap c "_c
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Setup theme
-"colorscheme solarized
+colorscheme solarized
 "colorscheme industry
+let g:solarized_termcolors=256
 if has('gui_running')
-    colorscheme solarized
-    let g:solarized_termcolors=256
-    set background=dark
+"    colorscheme solarized
+    set background=ligth
 else
-    colorscheme nord
+"    colorscheme solarized
     set background=dark
 endif
 call togglebg#map("<F5>")
@@ -101,6 +103,7 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 
 "Powerline setup
+"let g:airline_theme='powerlineish'
 set rtp+=/usr/local/lib/python3.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
