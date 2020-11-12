@@ -84,17 +84,17 @@ nnoremap c "_c
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Setup theme
-colorscheme solarized
+colorscheme nord
 "colorscheme industry
-let g:solarized_termcolors=256
-if has('gui_running')
+"let g:solarized_termcolors=256
+"if has('gui_running')
 "    colorscheme solarized
-    set background=ligth
-else
+"    set background=light
+"else
 "    colorscheme solarized
-    set background=dark
-endif
-call togglebg#map("<F5>")
+"    set background=dark
+"endif
+"call togglebg#map("<F5>")
 
 " Enable folding
 set foldmethod=indent
