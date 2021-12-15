@@ -1,3 +1,5 @@
+#DEPECRATED: I have move to an alternative way to manage the dotfiles base of git bare repositories, therefore there is not going to be additional updates to this ones. IN case of interest move to the another repository.
+
 # Dotfiles
 This repository contains the configuration files of my machine with all the optimizations and scripts that I mainly use on a daily basis
 As my first research topic, my machine has become nearly a Deep Learning workstation therefore many enviroment variables are focused on setting up libraries like CUDA or CuDNN.
